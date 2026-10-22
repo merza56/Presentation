@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>رقية بريسم | منظومة الإدارة وتطوير المبيعات - مدينة شط العرب السكنية</title>
+  <title>مدينة شط العرب السكنية | منظومة الإدارة وتطوير المبيعات - رقية بريسم</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
@@ -21,14 +21,17 @@
     <div class="progress-bar" id="progressBar"></div>
   </div>
 
-  <!-- Top Header -->
+  <!-- Top Header (Transition Badge Removed, PDF Download Button Added) -->
   <header class="top-bar">
     <div class="brand-mark">
       <span class="brand-dot"></span>
-      <span>رقية بريسم — مشروع تطوير وإدارة مدينة شط العرب السكنية</span>
+      <span>مدينة شط العرب السكنية — منظومة الإدارة وتطوير المبيعات</span>
     </div>
     <div class="header-meta">
-      <div class="transition-badge" id="transitionBadge" title="نوع الانتقال الحالي">انتقال سينمائي</div>
+      <button type="button" class="pdf-btn" id="pdfDownloadBtn" title="تنزيل العرض التقديمي كصفحات PDF بنفس التصميم">
+        <span class="pdf-icon">⬇</span>
+        <span>تنزيل PDF بنفس التصميم</span>
+      </button>
       <div class="slide-counter">
         <span class="current" id="currentSlideNum">01</span> / <span id="totalSlidesNum">12</span>
       </div>
@@ -38,149 +41,160 @@
   <!-- Main Presentation Stage -->
   <main class="deck-container" id="deck">
 
-    <!-- الشريحة 01: الغلاف وعنوان الخدمة -->
-    <section class="slide active" data-index="0" data-transition="zoom" data-transition-name="تقريب سينمائي" data-bg="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1600&q=85">
+    <!-- الشريحة 01: صفحة تعريفية عن مدينة شط العرب السكنية -->
+    <section class="slide active" data-index="0" data-transition="zoom" data-bg="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1600&q=85">
       <div class="slide-inner split-layout">
         <div class="content-col">
-          <div class="kicker anim-item delay-1">العرض الاستراتيجي المتكامل — البصرة</div>
+          <div class="kicker anim-item delay-1">البصرة — واجهة السكن العصري المتكامل</div>
           <h1 class="slide-title anim-item delay-2">
-            <span class="gold-text">رقية بريسم</span>
+            مدينة <span class="gold-text">شط العرب السكنية</span>
           </h1>
           <div class="gold-divider anim-item delay-2"></div>
           <p class="slide-lead anim-item delay-3">
-            عنوان الخدمة المتكاملة لإدارة وتطوير منظومة المبيعات، وبناء الفريق الداخلي، وتنشيط الحياة المجتمعية لصالح <strong>مدينة شط العرب السكنية</strong>.
+            صرح عمراني وسكني متكامل في محافظة البصرة، صُمم ليقدم للعوائل العراقية أسلوب حياة راقٍ يجمع بين الفخامة المعمارية، والخصوصية التامة، وتكامل الخدمات والمساحات الخضراء.
           </p>
-          <div class="desc-panel anim-item delay-4">
-            <p>
-              يقدم هذا المشروع رؤية تنفيذية متكاملة تحمل اسم <strong>رقية بريسم</strong> كعنوان للخدمة والمسؤولية المباشرة، بهدف الانتقال بعمليات البيع والإدارة والتسويق في مدينة شط العرب السكنية إلى مستوى قياسي من التنظيم المؤسسي والنمو المستدام، عبر خطوات متسلسلة تبدأ من القمة الإدارية وتصل إلى أدق تفاصيل تجربة الزبون وجودة الحياة داخل المدينة.
-            </p>
+          <div class="rich-list anim-item delay-4">
+            <div class="rich-item">
+              <span class="rich-icon">01</span>
+              <div class="rich-text">
+                <h4>مجتمع سكني متكامل الخدمات</h4>
+                <p>يمتد المشروع على مساحة واسعة تضم وحدات وفللاً سكنية بتصاميم عصرية متنوعة، محاطة بحدائق ومتنزهات ومرافق ترفيهية وخدمية متكاملة تلبي كافة تطلعات السكان.</p>
+              </div>
+            </div>
+            <div class="rich-item">
+              <span class="rich-icon">02</span>
+              <div class="rich-text">
+                <h4>قيمة عقارية واستثمارية واعدة في البصرة</h4>
+                <p>يمثل المشروع نقطة جذب رئيسية للراغبين في السكن الفاخر والاستثمار الآمن، مما يستدعي منظومة إدارة ومبيعات احترافية تواكب حجم هذا الصرح وتضاعف إقبال المشترين عليه.</p>
+              </div>
+            </div>
           </div>
         </div>
         <div class="visual-col anim-item delay-3">
           <div class="image-frame hero-frame">
-            <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=85" onerror="this.src='images/stock-luxury-villa.jpg'" alt="فخامة المجمعات السكنية العصرية" />
+            <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=85" onerror="this.src='images/stock-luxury-villa.jpg'" alt="مدينة شط العرب السكنية" />
             <div class="image-caption">
-              <span class="caption-tag">الرؤية السكنية</span>
-              <span>منظومة إدارية وبيعية تواكب فخامة المجتمعات السكنية الحديثة</span>
+              <span class="caption-tag">مدينة شط العرب</span>
+              <span>رؤية عمرانية حديثة تجمع بين جودة البناء ورفاهية الحياة</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- الشريحة 02: الهدف الاستراتيجي والدور القيادي المباشر (لماذا هذه الخدمة؟) -->
-    <section class="slide" data-index="1" data-transition="slide-rtl" data-transition-name="انزلاق أفقي" data-bg="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=85">
+    <!-- الشريحة 02: صفحة تعريفية عن رقية بريسم فقط -->
+    <section class="slide" data-index="1" data-transition="flip-3d" data-bg="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=85">
+      <div class="slide-inner">
+        <div class="kicker anim-item delay-1">النبذة التعريفية والسيرة القيادية</div>
+        <h2 class="slide-title anim-item delay-2">
+          من هي <span class="gold-text">رقية بريسم</span>؟
+        </h2>
+        <p class="slide-subtitle anim-item delay-2">
+          رائدة أعمال ومديرة تنفيذية وخبيرة متمرسة في الإدارة العامة، وإدارة الفرق، وقيادة المبيعات، وبناء استراتيجيات المشاريع، ترتكز في منهجيتها على الخبرة العملية المكتسبة من واقع السوق الفعلي والنتائج الميدانية الملموسة:
+        </p>
+        <div class="cards-grid-3 anim-item delay-3">
+          <div class="luxury-card">
+            <div class="card-badge">تأسيس وملكية وإدارة</div>
+            <h3 class="card-title">شركة سبأ العراق للدعاية والإعلان</h3>
+            <p class="card-desc">
+              المالكة والمؤسسة والمدير المفوض للشركة، بخبرة واسعة في قيادة الحملات الإعلانية، وصناعة الهوية التسويقية للمشاريع الكبرى، وفهم سلوك الجمهور في السوق العراقي.
+            </p>
+          </div>
+          <div class="luxury-card">
+            <div class="card-badge">تأسيس وملكية وإدارة</div>
+            <h3 class="card-title">شركة الفريد للمستلزمات والأجهزة الطبية</h3>
+            <p class="card-desc">
+              المالكة والمؤسسة والمدير المفوض للشركة، مما يعكس قدرة قيادية عالية على تأسيس وإدارة شركات متعددة القطاعات وتنظيم هياكلها التشغيلية والتجارية بكفاءة.
+            </p>
+          </div>
+          <div class="luxury-card">
+            <div class="card-badge">6 سنوات في قلب السوق</div>
+            <h3 class="card-title">خبرة ميدانية في المبيعات وإدارة المشاريع</h3>
+            <p class="card-desc">
+              خبرة عملية تمتد لست سنوات في الإدارة العامة، وإدارة الفرق (Team Management)، واختصاص المبيعات (Sales)، مع سجل حافل في وضع الاستراتيجيات والخطط لعديد من المشاريع وإنجاحها.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- الشريحة 03: قيادة الخدمة ومنصب المدير العام وهدف الزيادة -->
+    <section class="slide" data-index="2" data-transition="slide-rtl" data-bg="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=85">
       <div class="slide-inner split-layout">
         <div class="content-col">
-          <div class="step-pill anim-item delay-1">المنطلق الأساسي للمشروع</div>
+          <div class="step-pill anim-item delay-1">قيادة الخدمة والمسؤولية التنفيذية</div>
           <h2 class="slide-title anim-item delay-2">
-            القيادة المباشرة وهدف <span class="gold-text">زيادة المبيعات</span>
+            إدارة الخدمة والإشراف الحقيقي <span class="gold-text">بمنصب المدير العام</span>
           </h2>
           <p class="slide-lead anim-item delay-2">
-            تتولى <strong>رقية بريسم</strong> إدارة المشروع والخدمة بشكل مباشر وشامل، واضعةً نصب عينيها هدفاً مركزياً واحداً: <strong>تحقيق زيادة فعلية وملموسة في المبيعات</strong>.
+            تقدم <strong>رقية بريسم</strong> هذه المنظومة المتكاملة بصفتها <strong>مديرة الخدمة المقدمة والمشرفة الحقيقية</strong> على كافة تفاصيل المشروع، وتتولى قيادة العمل <strong>بمنصب المدير العام</strong>.
           </p>
           <div class="rich-list anim-item delay-3">
             <div class="rich-item">
               <span class="rich-icon">01</span>
               <div class="rich-text">
-                <h4>مديرة المشروع والخدمة المقدمة</h4>
-                <p>الإشراف الكامل والمباشر على كافة مراحل تطبيق الخدمة داخل مدينة شط العرب السكنية، ومتابعة تنفيذ كل محور على أرض الواقع دون وسطاء.</p>
+                <h4>مديرة الخدمة المقدمة والمشرفة الحقيقية</h4>
+                <p>تتواجد رقية بريسم على رأس الهرم التنفيذي كمديرة للخدمة ومشرفة فعلية وحقيقية تتابع أدق التفاصيل اليومية لضمان تطبيق الخطة بأعلى المعايير.</p>
               </div>
             </div>
             <div class="rich-item">
               <span class="rich-icon">02</span>
               <div class="rich-text">
-                <h4>المديرة العامة ومديرة المبيعات للمشروع</h4>
-                <p>الجمع بين الإدارة العامة للخدمة وإدارة المبيعات لضمان توحيد القرار الإداري والبيعي، وسرعة التوجيه، وربط كل جهد إداري أو تدريبي بنتائج البيع المباشر.</p>
+                <h4>تولّي منصب المدير العام للمشروع</h4>
+                <p>قيادة دفة الإدارة العامة بشكل مباشر لتوحيد القرار الإداري، وضبط مسار الأقسام، وقيادة المدراء والكفاءات الذين سيتم اختيارهم لبقية المناصب.</p>
               </div>
             </div>
             <div class="rich-item">
               <span class="rich-icon">03</span>
               <div class="rich-text">
-                <h4>الهدف الجوهري: الزيادة والنمو</h4>
-                <p>توجيه كافة الأدوات الإدارية والتدريبية والتسويقية لرفع معدلات الإغلاق البيعي وزيادة الإقبال الفعلي على وحدات مدينة شط العرب السكنية.</p>
+                <h4>الهدف الجوهري: تحقيق الزيادة في المبيعات</h4>
+                <p>توجيه كل خطوة إدارية وتدريبية وتسويقية نحو هدف أساسي واحد، وهو رفع حجم المبيعات وتحقيق نمو حقيقي ومستدام في مدينة شط العرب السكنية.</p>
               </div>
             </div>
           </div>
         </div>
         <div class="visual-col anim-item delay-4">
           <div class="image-frame">
-            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=85" onerror="this.src='images/stock-executive-leadership.jpg'" alt="القيادة المؤسسية ونمو المبيعات" />
+            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=85" onerror="this.src='images/stock-executive-leadership.jpg'" alt="القيادة العامة والإشراف الحقيقي" />
             <div class="image-caption">
-              <span class="caption-tag">هدف المشروع</span>
-              <span>قيادة تنفيذية وميدانية موحدة لتحقيق أعلى معدلات البيع</span>
+              <span class="caption-tag">المدير العام</span>
+              <span>إشراف حقيقي ومباشر من رقية بريسم لتحقيق أعلى زيادة في المبيعات</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- الشريحة 03: من هي رقية بريسم؟ (الخبرة العملية والملاءة القيادية) -->
-    <section class="slide" data-index="2" data-transition="flip-3d" data-transition-name="دوران ثلاثي الأبعاد" data-bg="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=85">
-      <div class="slide-inner">
-        <div class="kicker anim-item delay-1">السيرة القيادية والخبرة الميدانية</div>
-        <h2 class="slide-title anim-item delay-2">
-          من هي <span class="gold-text">رقية بريسم</span>؟
-        </h2>
-        <p class="slide-subtitle anim-item delay-2">
-          رائدة أعمال ومديرة تنفيذية وخبيرة متمرسة في إدارة الفرق وقيادة المبيعات وبناء استراتيجيات المشاريع، ترتكز في منهجيتها على الخبرة العملية المكتسبة من واقع السوق الفعلي والنتائج الميدانية الملموسة.
-        </p>
-        <div class="cards-grid-3 anim-item delay-3">
-          <div class="luxury-card">
-            <div class="card-badge">تأسيس وملكية</div>
-            <h3 class="card-title">شركة سبأ العراق للدعاية والإعلان</h3>
-            <p class="card-desc">
-              المالكة والمؤسسة والمدير المفوض للشركة، بخبرة واسعة في قيادة الحملات الإعلانية، وبناء الصورة الذهنية للمشاريع، وفهم سلوك الجمهور في السوق العراقي.
-            </p>
-          </div>
-          <div class="luxury-card">
-            <div class="card-badge">إدارة وتطوير</div>
-            <h3 class="card-title">شركة الفريد للمستلزمات والأجهزة الطبية</h3>
-            <p class="card-desc">
-              المالكة والمؤسسة والمدير المفوض للشركة، مما يعكس قدرة عالية على إدارة شركات متعددة القطاعات وتنظيم هياكلها التشغيلية والتجارية بكفاءة.
-            </p>
-          </div>
-          <div class="luxury-card">
-            <div class="card-badge">6 سنوات في قلب السوق</div>
-            <h3 class="card-title">اختصاص عميق في المبيعات وإدارة الفرق</h3>
-            <p class="card-desc">
-              خبرة ميدانية تمتد لست سنوات في الإدارة العامة، وإدارة الفرق (Team Management)، وإدارة المبيعات (Sales)، مع سجل حافل في صياغة الاستراتيجيات والخطط لعديد من المشاريع والوصول بها إلى النجاح.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- الشريحة 04: الخطوة التنفيذية الأولى — وضع المدراء الثلاثة -->
-    <section class="slide" data-index="3" data-transition="rise" data-transition-name="صعود انسيابي" data-bg="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1600&q=85">
+    <!-- الشريحة 04: هيكلة المناصب القيادية واختيار الكفاءات لها -->
+    <section class="slide" data-index="3" data-transition="rise" data-bg="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1600&q=85">
       <div class="slide-inner">
         <div class="step-pill anim-item delay-1">المرحلة التنفيذية الأولى — بناء القمة الإدارية</div>
         <h2 class="slide-title anim-item delay-2">
-          تسكين <span class="gold-text">المدراء الرئيسيين</span> في المشروع
+          قيادة الإدارة العامة <span class="gold-text">واختيار أكفاء لبقية المناصب</span>
         </h2>
         <p class="slide-subtitle anim-item delay-2">
-          تبدأ الخدمة بتأسيس هيكل قيادي متين داخل مدينة شط العرب السكنية تحت إشراف رقية بريسم، لضمان وجود مسؤول متخصص على رأس كل مفصل حيوي من مفاصل العمل:
+          تتولى <strong>رقية بريسم</strong> منصب <strong>المدير العام</strong> والمشرفة الحقيقية على الخدمة، بينما نقوم باختيار وتعيين أشخاص أكفاء ومتمرسين لبقية المناصب القيادية للعمل تحت إشرافها المباشر:
         </p>
         <div class="cards-grid-3 anim-item delay-3">
           <div class="luxury-card">
-            <div class="card-icon">01</div>
-            <h3 class="card-title">وضع مدير عام</h3>
+            <div class="card-badge">رقية بريسم</div>
+            <h3 class="card-title">المدير العام والمشرفة الحقيقية</h3>
             <p class="card-desc">
-              تسكين مدير عام يتولى ضبط الإيقاع الإداري اليومي، والتنسيق المباشر بين الأقسام، ومتابعة الالتزام بالسياسات العامة لضمان بيئة عمل منظمة ومستقرة.
+              تتولى رقية بريسم منصب المدير العام ومديرة الخدمة المقدمة، للإشراف الفعلي والمباشر على سير العمل، واتخاذ القرارات الاستراتيجية، وضمان تكامل الأداء بين كافة الأقسام.
             </p>
           </div>
           <div class="luxury-card">
-            <div class="card-icon">02</div>
-            <h3 class="card-title">وضع مدير مبيعات</h3>
+            <div class="card-badge">اختيار كفاءة متميزة</div>
+            <h3 class="card-title">وضع مدير مبيعات كفؤ</h3>
             <p class="card-desc">
-              تسكين مدير مبيعات متمرس يقود فريق السيل ميدانياً، ويتابع الصفقات اليومية، ويشرف على تحويل الزيارات والاستفسارات إلى عقود بيع فعلية.
+              اختيار وتسكين شخص كفؤ ومتمرس في منصب مدير المبيعات لقيادة فريق السيل ميدانياً، ومتابعة الصفقات اليومية وإغلاق العقود تحت إشراف المدير العام.
             </p>
           </div>
           <div class="luxury-card">
-            <div class="card-icon">03</div>
-            <h3 class="card-title">وضع مدير تسويق</h3>
+            <div class="card-badge">اختيار كفاءة متميزة</div>
+            <h3 class="card-title">وضع مدير تسويق كفؤ</h3>
             <p class="card-desc">
-              تسكين مدير تسويق يدير الخطط الترويجية والحملات الإعلانية، ويعمل على تغذية قسم المبيعات بعملاء مهتمين وإبراز مكانة مدينة شط العرب السكنية.
+              اختيار وتسكين شخص كفؤ ومبدع في منصب مدير التسويق لإدارة الحملات الترويجية، واستقطاب العملاء المهتمين، وإبراز مكانة مدينة شط العرب السكنية.
             </p>
           </div>
         </div>
@@ -188,7 +202,7 @@
     </section>
 
     <!-- الشريحة 05: الخطوة الثانية — تطوير تيم داخلي (التصفية والتعيين وجلب الكفاءات) -->
-    <section class="slide" data-index="4" data-transition="curtain" data-transition-name="تبديل عمقي" data-bg="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=85">
+    <section class="slide" data-index="4" data-transition="curtain" data-bg="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=85">
       <div class="slide-inner split-layout">
         <div class="content-col">
           <div class="step-pill anim-item delay-1">المرحلة الثانية — هيكلة الفريق الداخلي (1/4)</div>
@@ -196,7 +210,7 @@
             التصفية والتعيين <span class="gold-text">وجلب الكفاءات</span>
           </h2>
           <p class="slide-lead anim-item delay-2">
-            بعد تثبيت المدراء، تنطلق خدمة تطوير التيم الداخلي عبر غربلة شاملة للكادر واستقطاب العناصر القادرة على صناعة الفارق البيعي.
+            بعد تثبيت الهيكل القيادي، تنطلق خدمة تطوير التيم الداخلي عبر غربلة شاملة للكادر واستقطاب العناصر القادرة على صناعة الفارق البيعي.
           </p>
           <div class="rich-list anim-item delay-3">
             <div class="rich-item">
@@ -217,7 +231,7 @@
               <span class="rich-icon">✦</span>
               <div class="rich-text">
                 <h4>بناء روح الفريق الواحد</h4>
-                <p>دمج الكفاءات الجديدة مع العناصر المتميزة في بيئة عمل تحفيزية واضحة المهام والمسؤوليات.</p>
+                <p>دمج الكفاءات الجديدة مع العناصر المتميزة في بيئة عمل تحفيزية واضحة المهام والمسؤوليات تحت إشراف الإدارة العامة.</p>
               </div>
             </div>
           </div>
@@ -235,7 +249,7 @@
     </section>
 
     <!-- الشريحة 06: الخطوة الثالثة — تدريب خاص لتيم السيل -->
-    <section class="slide" data-index="5" data-transition="diagonal" data-transition-name="انسياب قطري" data-bg="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=85">
+    <section class="slide" data-index="5" data-transition="diagonal" data-bg="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=85">
       <div class="slide-inner split-layout">
         <div class="content-col">
           <div class="step-pill anim-item delay-1">المرحلة الثالثة — تطوير التيم الداخلي (2/4)</div>
@@ -282,7 +296,7 @@
     </section>
 
     <!-- الشريحة 07: الخطوة الرابعة — تدريب خاص للسيل بالقطاع العقاري -->
-    <section class="slide" data-index="6" data-transition="zoom" data-transition-name="تقريب سينمائي" data-bg="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=85">
+    <section class="slide" data-index="6" data-transition="zoom" data-bg="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=85">
       <div class="slide-inner split-layout">
         <div class="content-col">
           <div class="step-pill anim-item delay-1">المرحلة الرابعة — تطوير التيم الداخلي (3/4)</div>
@@ -329,7 +343,7 @@
     </section>
 
     <!-- الشريحة 08: الخطوة الخامسة — تدريب خاص بالبروتوكول واستقبال الزبائن -->
-    <section class="slide" data-index="7" data-transition="slide-rtl" data-transition-name="انزلاق أفقي" data-bg="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1600&q=85">
+    <section class="slide" data-index="7" data-transition="slide-rtl" data-bg="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1600&q=85">
       <div class="slide-inner split-layout">
         <div class="content-col">
           <div class="step-pill anim-item delay-1">المرحلة الخامسة — تطوير التيم الداخلي (4/4)</div>
@@ -376,14 +390,14 @@
     </section>
 
     <!-- الشريحة 09: الخطوة السادسة — نظام CRM جديد بما يناسب طريقة العمل -->
-    <section class="slide" data-index="8" data-transition="flip-3d" data-transition-name="دوران ثلاثي الأبعاد" data-bg="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1600&q=85">
+    <section class="slide" data-index="8" data-transition="flip-3d" data-bg="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1600&q=85">
       <div class="slide-inner">
         <div class="step-pill anim-item delay-1">المرحلة السادسة — الأتمتة وتنظيم العمل</div>
         <h2 class="slide-title anim-item delay-2">
           إعطاؤهم نظام <span class="gold-text">CRM جديد</span> يناسب طريقة العمل
         </h2>
         <p class="slide-subtitle anim-item delay-2">
-          لكي تثمر جهود المدراء والفريق المدرب، يتم تزويد المشروع بنظام إدارة علاقات عملاء (CRM) جديد ومصمم خصيصاً ليتطابق مع طبيعة وطريقة العمل الفعلية داخل مدينة شط العرب السكنية:
+          لكي تثمر جهود الإدارة والفريق المدرب، يتم تزويد المشروع بنظام إدارة علاقات عملاء (CRM) جديد ومصمم خصيصاً ليتطابق مع طبيعة وطريقة العمل الفعلية داخل مدينة شط العرب السكنية:
         </p>
         <div class="cards-grid-3 anim-item delay-3">
           <div class="luxury-card">
@@ -404,7 +418,7 @@
             <div class="card-icon">🔔</div>
             <h3 class="card-title">جدولة المتابعات والرقابة</h3>
             <p class="card-desc">
-              تنظيم مواعيد إعادة الاتصال بالعملاء المحتملين، وإتاحة لوحة متابعة واضحة للإدارة لمعرفة مسار كل عميل من لحظة التواصل الأول وحتى التعاقد.
+              تنظيم مواعيد إعادة الاتصال بالعملاء المحتملين، وإتاحة لوحة متابعة واضحة للمدير العام ومدير المبيعات لمعرفة مسار كل عميل حتى التعاقد.
             </p>
           </div>
         </div>
@@ -412,14 +426,14 @@
     </section>
 
     <!-- الشريحة 10: الخطوة السابعة — وضع خطة عمل و KPIs -->
-    <section class="slide" data-index="9" data-transition="rise" data-transition-name="صعود انسيابي" data-bg="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=85">
+    <section class="slide" data-index="9" data-transition="rise" data-bg="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=85">
       <div class="slide-inner">
         <div class="step-pill anim-item delay-1">المرحلة السابعة — التخطيط الاستراتيجي والقياس</div>
         <h2 class="slide-title anim-item delay-2">
           وضع خطة عمل شاملة <span class="gold-text">ومؤشرات أداء (KPIs)</span>
         </h2>
         <p class="slide-subtitle anim-item delay-2">
-          تحويل الأهداف إلى أرقام ومهام يومية واضحة من خلال صياغة خطة عمل متكاملة وربط كافة الأفراد والمدراء بمؤشرات قياس أداء (KPIs) دقيقة:
+          تحويل الأهداف إلى أرقام ومهام يومية واضحة من خلال صياغة خطة عمل متكاملة وربط كافة الأفراد والمدراء بمؤشرات قياس أداء (KPIs) دقيقة تحت إشراف المدير العام:
         </p>
         <div class="cards-grid-3 anim-item delay-3">
           <div class="luxury-card">
@@ -448,7 +462,7 @@
     </section>
 
     <!-- الشريحة 11: الخطوة الثامنة — خطة الرفاهية والتوعية داخل المدينة السكنية -->
-    <section class="slide" data-index="10" data-transition="curtain" data-transition-name="تبديل عمقي" data-bg="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=1600&q=85">
+    <section class="slide" data-index="10" data-transition="curtain" data-bg="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=1600&q=85">
       <div class="slide-inner split-layout">
         <div class="content-col">
           <div class="step-pill anim-item delay-1">المرحلة الثامنة — حيوية المدينة وجذب الجمهور</div>
@@ -495,20 +509,20 @@
     </section>
 
     <!-- الشريحة 12: الخاتمة وتكامل المنظومة -->
-    <section class="slide" data-index="11" data-transition="diagonal" data-transition-name="انسياب قطري" data-bg="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=85">
+    <section class="slide" data-index="11" data-transition="diagonal" data-bg="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=85">
       <div class="slide-inner">
         <div class="kicker anim-item delay-1">خلاصة المشروع</div>
         <h2 class="slide-title anim-item delay-2">
-          منظومة متكاملة بقيادة <span class="gold-text">رقية بريسم</span>
+          منظومة متكاملة بإشراف <span class="gold-text">رقية بريسم</span>
         </h2>
         <div class="gold-divider anim-item delay-2"></div>
         <p class="slide-subtitle anim-item delay-3">
-          تتكامل هذه المراحل المتسلسلة لتقدم لـ <strong>مدينة شط العرب السكنية</strong> حلاً شاملاً يجمع بين القيادة التنفيذية المباشرة، وتسكين المدراء، وبناء وتدريب الفريق، وأتمتة العمل بنظام CRM وخطط KPIs، وتنشيط الرفاهية والفعاليات داخل المدينة — نحو هدف واحد: <strong>تحقيق أعلى زيادة في المبيعات والنجاح المستدام</strong>.
+          تتكامل هذه المراحل المتسلسلة لتقدم لـ <strong>مدينة شط العرب السكنية</strong> حلاً شاملاً تقوده <strong>رقية بريسم</strong> بصفتها <strong>مديرة الخدمة المقدمة والمشرفة الحقيقية بمنصب المدير العام</strong>، مع اختيار أكفاء لبقية المناصب، وبناء وتدريب الفريق، وأتمتة العمل بنظام CRM وخطط KPIs، وتنشيط الرفاهية والفعاليات داخل المدينة — نحو هدف واحد: <strong>تحقيق أعلى زيادة في المبيعات والنجاح المستدام</strong>.
         </p>
         <div class="summary-strip anim-item delay-4">
-          <div class="strip-step">قيادة رقية بريسم</div>
+          <div class="strip-step">المدير العام (رقية بريسم)</div>
           <span class="strip-arrow">←</span>
-          <div class="strip-step">وضع المدراء الثلاثة</div>
+          <div class="strip-step">اختيار أكفاء للمبيعات والتسويق</div>
           <span class="strip-arrow">←</span>
           <div class="strip-step">تصفية وتدريب التيم</div>
           <span class="strip-arrow">←</span>

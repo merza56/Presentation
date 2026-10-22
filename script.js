@@ -3,28 +3,111 @@
   const totalSlides = slides.length;
   const currentSlideNumEl = document.getElementById('currentSlideNum');
   const totalSlidesNumEl = document.getElementById('totalSlidesNum');
-  const transitionBadgeEl = document.getElementById('transitionBadge');
   const progressBar = document.getElementById('progressBar');
   const bgStage = document.getElementById('bgStage');
   const prevBtn = document.getElementById('prevBtn');
   const nextBtn = document.getElementById('nextBtn');
+  const pdfDownloadBtn = document.getElementById('pdfDownloadBtn');
   const dotsContainer = document.getElementById('dotsContainer');
 
   let currentIndex = 0;
   let isAnimating = false;
 
-  totalSlidesNumEl.textContent = String(totalSlides).padStart(2, '0');
+  const totalFormatted = String(totalSlides).padStart(2, '0');
+  totalSlidesNumEl.textContent = totalFormatted;
 
-  // Preload background images from Shatt Al-Arab Residential City
-  slides.forEach((slide) => {
-    const bgUrl = slide.getAttribute('data-bg');
+  // Fallback local stock images map for offline/print resilience
+  const fallbackImages = [
+    'images/stock-luxury-villa.jpg',
+    'images/stock-executive-leadership.jpg',
+    'images/stock-executive-leadership.jpg',
+    'images/stock-team-talent.jpg',
+    'images/stock-team-talent.jpg',
+    'images/stock-sales-training.jpg',
+    'images/stock-real-estate-sales.jpg',
+    'images/stock-protocol-hospitality.jpg',
+    'images/stock-executive-leadership.jpg',
+    'images/stock-sales-training.jpg',
+    'images/stock-city-gardens-events.jpg',
+    'images/stock-luxury-villa.jpg'
+  ];
+
+  // Preload background images and inject exact 1:1 per-slide print/PDF replica chrome
+  slides.forEach((slide, idx) => {
+    const bgUrl = slide.getAttribute('data-bg') || '';
+    const fallbackUrl = fallbackImages[idx % fallbackImages.length];
     if (bgUrl) {
       const img = new Image();
       img.src = bgUrl;
     }
+
+    const slideNumFormatted = String(idx + 1).padStart(2, '0');
+    const progressPercent = (((idx + 1) / totalSlides) * 100).toFixed(2);
+
+    let dotsHtml = '';
+    for (let d = 0; d < totalSlides; d++) {
+      dotsHtml += `<span class="dot${d === idx ? ' active' : ''}"></span>`;
+    }
+
+    const chrome = document.createElement('div');
+    chrome.className = 'slide-print-chrome';
+    chrome.setAttribute('aria-hidden', 'true');
+    chrome.innerHTML = `
+      <div class="slide-print-bg">
+        <svg class="slide-print-base-svg" viewBox="0 0 1600 900" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%;z-index:0;">
+          <rect width="1600" height="900" fill="#07090f" />
+        </svg>
+        <img src="${bgUrl}" onerror="this.src='${fallbackUrl}'" alt="" style="position:relative;z-index:1;" />
+        <svg class="slide-print- tint-svg" viewBox="0 0 1600 900" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%;z-index:2;">
+          <defs>
+            <radialGradient id="goldGlow${idx}" cx="18%" cy="22%" r="50%">
+              <stop offset="0%" stop-color="#d4af37" stop-opacity="0.16" />
+              <stop offset="100%" stop-color="#07090f" stop-opacity="0" />
+            </radialGradient>
+            <linearGradient id="darkGrad${idx}" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#07090f" stop-opacity="0.90" />
+              <stop offset="50%" stop-color="#0d121d" stop-opacity="0.76" />
+              <stop offset="100%" stop-color="#07090f" stop-opacity="0.92" />
+            </linearGradient>
+          </defs>
+          <rect width="1600" height="900" fill="url(#darkGrad${idx})" />
+          <rect width="1600" height="900" fill="url(#goldGlow${idx})" />
+        </svg>
+      </div>
+      <div class="slide-print-overlay"></div>
+      <div class="slide-print-grid"></div>
+      <div class="slide-print-progress">
+        <div class="slide-print-progress-bar" style="width: ${progressPercent}%"></div>
+      </div>
+      <div class="slide-print-topbar">
+        <div class="brand-mark">
+          <span class="brand-dot"></span>
+          <span>مدينة شط العرب السكنية — منظومة الإدارة وتطوير المبيعات</span>
+        </div>
+        <div class="header-meta">
+          <div class="slide-counter">
+            <span class="current">${slideNumFormatted}</span> / <span>${totalFormatted}</span>
+          </div>
+        </div>
+      </div>
+      <div class="slide-print-bottombar">
+        <div class="nav-buttons">
+          <span class="nav-btn${idx === 0 ? ' disabled' : ''}">
+            <span>→</span>
+            <span>السابق</span>
+          </span>
+          <span class="nav-btn${idx === totalSlides - 1 ? ' disabled' : ''}">
+            <span>التالي</span>
+            <span>←</span>
+          </span>
+        </div>
+        <div class="dots-nav">${dotsHtml}</div>
+      </div>
+    `;
+    slide.insertBefore(chrome, slide.firstChild);
   });
 
-  // Create navigation dots
+  // Create interactive navigation dots
   slides.forEach((_, idx) => {
     const dot = document.createElement('button');
     dot.className = 'dot' + (idx === 0 ? ' active' : '');
@@ -54,15 +137,8 @@
     if (bgUrl && bgStage) {
       bgStage.classList.remove('ken-burns');
       bgStage.style.backgroundImage = `url("${bgUrl}")`;
-      // Trigger subtle Ken Burns effect
       void bgStage.offsetWidth;
       bgStage.classList.add('ken-burns');
-    }
-
-    // Update transition indicator badge
-    const transitionName = activeSlide.getAttribute('data-transition-name') || 'انتقال سلس';
-    if (transitionBadgeEl) {
-      transitionBadgeEl.textContent = 'حركة الصفحة: ' + transitionName;
     }
 
     dots.forEach((dot, idx) => {
@@ -103,6 +179,13 @@
 
   prevBtn.addEventListener('click', prevSlide);
   nextBtn.addEventListener('click', nextSlide);
+
+  // PDF Export button: ensures all slide images are ready, then triggers 1:1 widescreen PDF export
+  if (pdfDownloadBtn) {
+    pdfDownloadBtn.addEventListener('click', () => {
+      window.print();
+    });
+  }
 
   // Keyboard navigation (RTL aware: ArrowLeft = Next, ArrowRight = Prev)
   window.addEventListener('keydown', (e) => {
